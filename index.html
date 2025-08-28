@@ -1,265 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AM Bouncer Security</title>
-  <meta name="description" content="AM Bouncer Security Services – Professional bouncers for events, clubs, and VIP protection across India.">
-  <meta name="keywords" content="Bouncer, Security, Event Protection, VIP Security, India">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('images/background.jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      animation: fadeInBody 1s ease-in;
-    }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
 
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+}
 
-    nav {
-      background: rgba(0, 0, 0, 0.85);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-    }
+/* Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
 
-    nav ul li {
-      margin: 0 15px;
-    }
+.login-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+.login-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
-    nav ul li a:hover {
-      color: #FFD700;
-    }
+/* Input Groups */
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
 
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: slideDown 1s ease-out;
-    }
+.input-group label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
 
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+.input-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+}
 
-    header img {
-      height: 60px;
-      margin-right: 15px;
-      animation: bounceLogo 2s infinite;
-    }
+/* Forgot password */
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
 
-    @keyframes bounceLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+.forgot:hover {
+  text-decoration: underline;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+/* Button */
+.btn {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    section {
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.6);
-      margin: 20px;
-      border-radius: 10px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease-out forwards;
-      animation-delay: 0.5s;
-    }
+.btn:hover {
+  background: #1e293b;
+}
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+/* OR text */
+.or {
+  margin: 1.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #ddd;
+}
 
-    .owner-img {
-      width: 200px;
-      border-radius: 15px;
-      margin-top: 20px;
-      transition: transform 0.3s ease;
-    }
+/* Social Buttons */
+.social-login {
+  display: flex;
+  justify-content: space-between;
+}
 
-    .owner-img:hover {
-      transform: scale(1.05);
-    }
+.social-login button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
 
-    h2, h3 {
-      transition: text-shadow 0.3s ease;
-    }
+.social-login button:hover {
+  transform: scale(1.05);
+}
 
-    h2:hover, h3:hover {
-      text-shadow: 0 0 10px #fff, 0 0 20px #f0f0f0;
-    }
+/* Colors */
+.google { background: white; color: black; }
+.github { background: black; color: white; }
+.facebook { background: #1877f2; color: white; }
 
-    .gallery-grid {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+/* Register */
+.register {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
 
-    .gallery-grid img {
-      width: 250px;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
+.register a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
+.register a:hover {
+  text-decoration: underline;
+}
 
-    .call-btn, .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: green;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 10px #000;
-    }
-
-    .call-btn {
-      bottom: 70px;
-      background: #007BFF;
-    }
-
-    footer {
-      background: black;
-      padding: 20px;
-      margin-top: 20px;
-      animation: fadeInFooter 1s ease-in;
-    }
-
-    @keyframes fadeInFooter {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header -->
-  <header>
-    <img src="images/logo.jpg" alt="AM Bouncer Logo">
-    <h1>AM Bouncer Security Services</h1>
-  </header>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      ✅ Verified certifications & 14 Year Experienced services<br>
-      ✅ Available 24/7 across India<br>
-      ✅ Customizable packages for any event size<br>
-      ✅ Male & female bouncers available<br><br>
-      AM Bouncer Security is Maharashtra’s trusted name in elite protection services. With a reputation built on strength, discipline, and professionalism, we provide top-tier bouncers and bodyguards for events, VIPs, and corporate clients across the state.
-      <br><br>
-      ✔️ Bouncer Security<br>
-      ✔️ Event Security<br>
-      ✔️ Private Parties & Weddings<br>
-      ✔️ Celebrity Protection<br>
-      ✔️ Hotel & Club Security<br><br>
-      Trusted Across India for Elite Security Solutions.<br>
-    </p> 
-     
-    <img src="images/main_owner_arif_mulani.jpg" alt="Owner" class="owner-img">
-    <h3>Mr. Arif Mulani</h3>
-    <p>Founder & Owner</p>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>
-      ✔️ Bouncer Security<br>
-      ✔️ Event Security<br>
-      ✔️ Private Parties & Weddings<br>
-      ✔️ Celebrity Protection<br>
-      ✔️ Hotel & Club Security<br><br>
-      Trusted Across India for Elite Security Solutions.<br>
-      With a reputation built on professionalism, strength, and reliability.
-    </p>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="images/event1.jpg" alt="Event Security">
-      <img src="images/kl_rahul.jpg" alt="Event Security">
-      <img src="images/virat_kohli.jpg" alt="VIP Protection">
-      <img src="images/cele_sahil_khan.jpg" alt="Event Security">
-      <img src="images/female_squad.jpg" alt="Event Security">
-      <img src="images/celebrity2.jpg" alt="Event Security"> 
-      <img src="images/pr3.jpg" alt="Event Security"> 
-      <img src="images/project.jpg" alt="Event Security"> 
-      <img src="images/proj.jpg" alt="Event Security"> 
-      <img src="images/professional_security.jpg" alt="Event Security"> 
-      <img src="images/pr7.jpg" alt="Event Security"> 
-      <img src="images/pr4.jpg" alt="Event Security"> 
-      <img src="images/sp.jpg" alt="Event Security"> 
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>
-      📞 9890906875 / 8605509033<br>
-      📧 mulani.arif89@gmail.com<br>
-      🌐 www.ambouncer.com
-    </p>
-  </section>
-
-  <!-- Floating Buttons -->
-  <a href="tel:9890906875" class="call-btn">📞 Call Us</a>
-  <a href="https://wa.me/9890906875" class="whatsapp-btn">💬 WhatsApp</a>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 AM Bouncer Security. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
