@@ -1,0 +1,152 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Card */
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Groups */
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+/* Forgot password */
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e293b;
+}
+
+/* OR text */
+.or {
+  margin: 1.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Social Buttons */
+.social-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-login button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-login button:hover {
+  transform: scale(1.05);
+}
+
+/* Colors */
+.google { background: white; color: black; }
+.github { background: black; color: white; }
+.facebook { background: #1877f2; color: white; }
+
+/* Register */
+.register {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.register a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
